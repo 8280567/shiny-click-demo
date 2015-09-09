@@ -1,0 +1,17 @@
+{
+    "contents" : "### 功能：一个点的（R）坐标，返回它的像素坐标\n### 参数：x 和 y 是该点的（R）坐标，后面的参数是图片的像素以及坐标系离图片边框的（像素）距离\ngetPixel <- function(x, y, myBuild, myWidth = 800, myHeight = 400, UP = 80.5, RIGHT = 13, BUTTOM = 50, LEFT = 53){\n    xMin = myBuild$panel$ranges[[1]]$x.range[1]   ## 拿到X轴和Y轴的范围\n    xMax = myBuild$panel$ranges[[1]]$x.range[2]\n    yMin = myBuild$panel$ranges[[1]]$y.range[1]\n    yMax = myBuild$panel$ranges[[1]]$y.range[2]\n\n    xPixel = (x - xMin) / (xMax - xMin) * (myWidth - LEFT - RIGHT) + LEFT   ## 横坐标转成像素\n    yPixel = (y - yMin) / (yMax - yMin) * (myHeight - UP - BUTTOM) + BUTTOM   ## 纵坐标转成像素\n\n    return(c(round(xPixel,2), round((myHeight - yPixel),2)))\n}\n\n\n## 功能：输入一个像素坐标，返回所点击的柱条\n## 参数：myPixel是存放柱条的像素坐标的数据框，后面两个是点击的像素坐标\npointAtBar <- function(myPixel, xPixel, yPixel){\n    d = 1\n    for (i in 1:ncol(myPixel))\n        if ((myPixel[i,1] - d) <= xPixel && (xPixel <= myPixel[i,5] + d))\n        {\n            if ((myPixel[i,4] - d) <= yPixel && (yPixel <= myPixel[i,2] + d))\n                return(myPixel$names[i])\n            break\n        }\n    return(NULL)\n}\n\n\n## 功能：输入一个像素坐标，返回所点击的线条\n## 输入：myPixel是存放线图中所有点的像素坐标的数据框，后面两个是点击的像素坐标\npointAtLine <- function(myPixel, xPixel, yPixel){\n    d = 4\n    for (i in 2:nrow(myPixel))\n        if((myPixel[i-1,1] - d) <= xPixel && xPixel <= (myPixel[i,1] + d))\n        {\n            if(abs((((myPixel[i,1]-myPixel[i-1,1]) * (yPixel-myPixel[i-1,2])) - (myPixel[i,2]-myPixel[i-1,2]) * (xPixel-myPixel[i-1,1])) /\n                   sqrt((myPixel[i,1]-myPixel[i-1,1])^2 + (myPixel[i,2]-myPixel[i-1,2])^2)) <= d)\n                return(myPixel$names[i])\n            break\n        }\n    return(NULL)\n}\n\n\n## 功能：获取柱状图中每个柱条（四个顶点）的像素坐标，返回一个数据框\n## 参数：p为柱状图的 ggplot2 对象\nGetbar <- function(p)\n{\n    myBuild = ggplot_build(p)   ## ggplot_build() 可查看 ggplot 对象的画图参数\n    myPixel = data.frame(x1Pixel = c(0), y1Pixel = c(0), x2Pixel = c(0), y2Pixel = c(0),\n                         x3Pixel = c(0), y3Pixel = c(0), x4Pixel = c(0), y4Pixel = c(0))\n    myData = myBuild$data[[1]]  ## 可查看各个柱条四个顶点的坐标\n    for (i in 1:nrow(myData))\n    {\n        pixel1 = getPixel(myData[i,8], myData[i,6], myBuild)   ## 注意查看xmax,xmin,ymin,ymax参数在第几列，如果柱状图没有颜色的话将会不同，需要更改\n        pixel2 = getPixel(myData[i,8], myData[i,7], myBuild)\n        pixel3 = getPixel(myData[i,9], myData[i,6], myBuild)\n        pixel4 = getPixel(myData[i,9], myData[i,7], myBuild)\n        myPixel = rbind(myPixel, c(pixel1, pixel2, pixel3, pixel4))   ## 求得每个柱条四个顶点的像素坐标后存于哈希表\n    }\n    myPixel = myPixel[-1,]\n    myPixel$names = myBuild$panel$ranges[[1]]$x.labels\n    return(myPixel)\n}\n\n\n## 功能：获取线图中所有点的像素坐标，返回一个数据框\n## 参数：p为线图的 ggplot2 对象\nGetLine <- function(p)\n{\n    myBuild = ggplot_build(p)\n    myPixel = data.frame(xPixel = c(0), yPixel = c(0))\n    myData = myBuild$data[[1]]\n    for (i in 1:nrow(myData))\n        myPixel = rbind(myPixel, c(getPixel(myData[i,2], myData[i,3], myBuild, myWidth = 800, myHeight = 400, UP = 17, RIGHT = 86, BUTTOM = 46, LEFT = 50)))\n    myPixel = myPixel[-1,]\n    myPixel$names = myData[,2]\n    return(myPixel)\n}\n",
+    "created" : 1440379374176.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3673190570",
+    "id" : "F7F1DAF7",
+    "lastKnownWriteTime" : 1440409601,
+    "path" : "C:/Users/Administrator/Desktop/shiny_click_demo/myMethods.R",
+    "project_path" : "myMethods.R",
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

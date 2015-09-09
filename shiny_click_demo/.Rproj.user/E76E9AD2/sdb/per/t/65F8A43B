@@ -1,0 +1,17 @@
+{
+    "contents" : "library(shiny)\nsource('LoadJSCSS.R', encoding = \"utf-8\")\n\nshinyUI(fluidPage(\n    tabsetPanel(\n        tabPanel(title = \"柱状图Demo\",\n            wellPanel(plotOutput(\"mainBar\", click = \"plot_click1\"),\n                verbatimTextOutput(\"pplot1\"),   ## call the click envent on the picture\n                LoadJSCSS(),\n                div(class = 'menu',id = 'myMenu1',\n                    a(class = 'menuItem', id = \"tc1\",onclick = \"TC('404.png','Popup1','imgId1')\",  ## The name of the picture can't include Chinese.\n                    \"404错误\"),\n                    a(class = 'menuItem', id = \"tc2\",onclick = \"TC('prettyGirl.png','Popup1','imgId1')\",\n                    \"prettyGirl\")\n                ),\n                div(class = \"border-radius box-shadow\",id = \"Popup1\",\n                    div( class = \"top border-radius-top\",\n                       span(\"X\",class = \"close\",title = \"关闭窗口\")\n                    ),\n                    div( class = \"main\",\n                       img(src = '404.png', width = \"800\", height = \"400\", id = \"imgId1\")\n                    )\n                )\n                )\n        ),\n\n        tabPanel(title = \"条形图Demo\",\n                 wellPanel(plotOutput(\"mainLine\", click = \"plot_click2\"),\n                           verbatimTextOutput(\"pplot2\"),   ## call the click envent on the picture\n                           LoadJSCSS(),\n                           div(class = 'menu',id = 'myMenu2',\n                               a(class = 'menuItem', id = \"tc3\",onclick = \"TC('weChat.png','Popup2','imgId2')\",   ## The name of the picture can't include Chinese.\n                                 \"12\"),\n                               a(class = 'menuItem', id = \"tc4\",onclick = \"TC('sentence.png', 'Popup2','imgId2')\",\n                                 \"句子\")\n                           ),\n                           div(class = \"border-radius box-shadow\",id = \"Popup2\",\n                               div( class = \"top border-radius-top\",\n                                    span(\"X\",class = \"close\",title = \"关闭窗口\")\n                               ),\n                               div( class = \"main\",\n                                    img(src = '404.png', width = \"800\", height = \"400\", id = \"imgId2\")\n                               )\n                           )\n                 )\n        )\n)))\n",
+    "created" : 1440379324889.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2848901500",
+    "id" : "65F8A43B",
+    "lastKnownWriteTime" : 1440176624,
+    "path" : "C:/Users/Administrator/Desktop/shiny_click_demo/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

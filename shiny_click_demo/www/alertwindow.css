@@ -1,0 +1,690 @@
+.box-shadow{
+    -webkit-box-shadow:0px 0px 6px #abacaf;
+    -moz-box-shadow:0px 0px 6px #a7a8ae;
+    box-shadow:0px 0px 6px #a7a8ae;
+}
+.border-radius{
+    border-width: 1px;
+    border-style: solid;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: #a7a8ae;
+}
+.border-radius-top{
+    border-width: 0px;
+    border-style: solid;
+    -moz-border-radius-topleft:5px;
+    -moz-border-radius-topright:5px;
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+    color: #a7a8ae;
+}
+.border-radius-bottom{
+    border-width: 0px;
+    border-style: solid;
+    -moz-border-radius-bottomleft:5px;
+    -moz-border-radius-bottomright:5px;
+    -webkit-border-bottom-left-radius:5px;
+    -webkit-border-bottom-right-radius:5px;
+    color: #a7a8ae;
+}
+
+/*遮罩层*/
+#Mask{
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: none;
+    z-index: 100;
+    background:#000;
+    opacity:0.25;
+    filter:alpha(opacity=25);
+}
+/*弹出层*/
+#Popup{
+    top: 0;
+    left: 0;
+    width: 820px;
+    position: absolute;
+    display: none;
+    border: 1px solid #c3c3c3;
+    background-color: #ffffff;
+    z-index: 101;
+}
+/*定义弹出层里与左右两边的内补白*/
+#Popup .top,#Popup .main,#Popup .footer{
+    padding: 0px 12px 0px 12px;
+}
+/*定义弹出层标题*/
+#Popup .top{
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    border-bottom: 1px solid #bfbfbf;
+    background-color: #f0f0f0;
+    cursor: move;
+}
+/*定义弹出层中的关闭按钮*/
+#Popup .close{
+    float: right;
+    cursor: pointer;
+}
+/*定义弹出层中主体内容区域*/
+#Popup .main{
+    min-height: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/*定义弹出层的脚部*/
+#Popup .footer{
+    height: 40px;
+    border-top: 1px solid #bfbfbf;
+    background-color: #f0f0f0;
+}
+/*定义弹出层的脚部的按钮*/
+#Popup .footer input{
+    margin-top: 5px;
+    padding: 5px 10px 4px 10px;
+    font-weight: bold;
+    background-color: #f4f4f4;
+}
+/*定义弹出层的脚部的按钮的hover样式*/
+#Popup .footer input:hover{
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+
+
+
+/*弹出层*/
+#Popup1{
+    top: 0;
+    left: 0;
+    width: 820px;
+    position: absolute;
+    display: none;
+    border: 1px solid #c3c3c3;
+    background-color: #ffffff;
+    z-index: 101;
+}
+/*定义弹出层里与左右两边的内补白*/
+#Popup1 .top,#Popup1 .main,#Popup1 .footer{
+    padding: 0px 12px 0px 12px;
+}
+/*定义弹出层标题*/
+#Popup1 .top{
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    border-bottom: 1px solid #bfbfbf;
+    background-color: #f0f0f0;
+    cursor: move;
+}
+/*定义弹出层中的关闭按钮*/
+#Popup1 .close{
+    float: right;
+    cursor: pointer;
+}
+/*定义弹出层中主体内容区域*/
+#Popup1 .main{
+    min-height: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/*定义弹出层的脚部*/
+#Popup1 .footer{
+    height: 40px;
+    border-top: 1px solid #bfbfbf;
+    background-color: #f0f0f0;
+}
+/*定义弹出层的脚部的按钮*/
+#Popup1 .footer input{
+    margin-top: 5px;
+    padding: 5px 10px 4px 10px;
+    font-weight: bold;
+    background-color: #f4f4f4;
+}
+/*定义弹出层的脚部的按钮的hover样式*/
+#Popup1 .footer input:hover{
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+
+
+
+/*弹出层*/
+#Popup2{
+    top: 0;
+    left: 0;
+    width: 820px;
+    position: absolute;
+    display: none;
+    border: 1px solid #c3c3c3;
+    background-color: #ffffff;
+    z-index: 101;
+}
+/*定义弹出层里与左右两边的内补白*/
+#Popup2 .top,#Popup2 .main,#Popup2 .footer{
+    padding: 0px 12px 0px 12px;
+}
+/*定义弹出层标题*/
+#Popup2 .top{
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    border-bottom: 1px solid #bfbfbf;
+    background-color: #f0f0f0;
+    cursor: move;
+}
+/*定义弹出层中的关闭按钮*/
+#Popup2 .close{
+    float: right;
+    cursor: pointer;
+}
+/*定义弹出层中主体内容区域*/
+#Popup2 .main{
+    min-height: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/*定义弹出层的脚部*/
+#Popup2 .footer{
+    height: 40px;
+    border-top: 1px solid #bfbfbf;
+    background-color: #f0f0f0;
+}
+/*定义弹出层的脚部的按钮*/
+#Popup2 .footer input{
+    margin-top: 5px;
+    padding: 5px 10px 4px 10px;
+    font-weight: bold;
+    background-color: #f4f4f4;
+}
+/*定义弹出层的脚部的按钮的hover样式*/
+#Popup2 .footer input:hover{
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*弹出层*/
+#Popup3{
+    top: 0;
+    left: 0;
+    width: 820px;
+    position: absolute;
+    display: none;
+    border: 1px solid #c3c3c3;
+    background-color: #ffffff;
+    z-index: 101;
+}
+/*定义弹出层里与左右两边的内补白*/
+#Popup3 .top,#Popup3 .main,#Popup3 .footer{
+    padding: 0px 12px 0px 12px;
+}
+/*定义弹出层标题*/
+#Popup3 .top{
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    border-bottom: 1px solid #bfbfbf;
+    background-color: #f0f0f0;
+    cursor: move;
+}
+/*定义弹出层中的关闭按钮*/
+#Popup3 .close{
+    float: right;
+    cursor: pointer;
+}
+/*定义弹出层中主体内容区域*/
+#Popup3 .main{
+    min-height: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/*定义弹出层的脚部*/
+#Popup3 .footer{
+    height: 40px;
+    border-top: 1px solid #bfbfbf;
+    background-color: #f0f0f0;
+}
+/*定义弹出层的脚部的按钮*/
+#Popup3 .footer input{
+    margin-top: 5px;
+    padding: 5px 10px 4px 10px;
+    font-weight: bold;
+    background-color: #f4f4f4;
+}
+/*定义弹出层的脚部的按钮的hover样式*/
+#Popup3 .footer input:hover{
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+
+
+
+
+/*弹出层*/
+#Popup4{
+    top: 0;
+    left: 0;
+    width: 820px;
+    position: absolute;
+    display: none;
+    border: 1px solid #c3c3c3;
+    background-color: #ffffff;
+    z-index: 101;
+}
+/*定义弹出层里与左右两边的内补白*/
+#Popup4 .top,#Popup4 .main,#Popup4 .footer{
+    padding: 0px 12px 0px 12px;
+}
+/*定义弹出层标题*/
+#Popup4 .top{
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    border-bottom: 1px solid #bfbfbf;
+    background-color: #f0f0f0;
+    cursor: move;
+}
+/*定义弹出层中的关闭按钮*/
+#Popup4 .close{
+    float: right;
+    cursor: pointer;
+}
+/*定义弹出层中主体内容区域*/
+#Popup4 .main{
+    min-height: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/*定义弹出层的脚部*/
+#Popup4 .footer{
+    height: 40px;
+    border-top: 1px solid #bfbfbf;
+    background-color: #f0f0f0;
+}
+/*定义弹出层的脚部的按钮*/
+#Popup4 .footer input{
+    margin-top: 5px;
+    padding: 5px 10px 4px 10px;
+    font-weight: bold;
+    background-color: #f4f4f4;
+}
+/*定义弹出层的脚部的按钮的hover样式*/
+#Popup4 .footer input:hover{
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+/*弹出层*/
+#Popup5{
+    top: 0;
+    left: 0;
+    width: 820px;
+    position: absolute;
+    display: none;
+    border: 1px solid #c3c3c3;
+    background-color: #ffffff;
+    z-index: 101;
+}
+/*定义弹出层里与左右两边的内补白*/
+#Popup5 .top,#Popup5 .main,#Popup5 .footer{
+    padding: 0px 12px 0px 12px;
+}
+/*定义弹出层标题*/
+#Popup5 .top{
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    border-bottom: 1px solid #bfbfbf;
+    background-color: #f0f0f0;
+    cursor: move;
+}
+/*定义弹出层中的关闭按钮*/
+#Popup5 .close{
+    float: right;
+    cursor: pointer;
+}
+/*定义弹出层中主体内容区域*/
+#Popup5 .main{
+    min-height: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/*定义弹出层的脚部*/
+#Popup5 .footer{
+    height: 40px;
+    border-top: 1px solid #bfbfbf;
+    background-color: #f0f0f0;
+}
+/*定义弹出层的脚部的按钮*/
+#Popup5 .footer input{
+    margin-top: 5px;
+    padding: 5px 10px 4px 10px;
+    font-weight: bold;
+    background-color: #f4f4f4;
+}
+/*定义弹出层的脚部的按钮的hover样式*/
+#Popup5 .footer input:hover{
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+
+
+
+
+/*弹出层*/
+#Popup6{
+    top: 0;
+    left: 0;
+    width: 820px;
+    position: absolute;
+    display: none;
+    border: 1px solid #c3c3c3;
+    background-color: #ffffff;
+    z-index: 101;
+}
+/*定义弹出层里与左右两边的内补白*/
+#Popup6 .top,#Popup6 .main,#Popup6 .footer{
+    padding: 0px 12px 0px 12px;
+}
+/*定义弹出层标题*/
+#Popup6 .top{
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    border-bottom: 1px solid #bfbfbf;
+    background-color: #f0f0f0;
+    cursor: move;
+}
+/*定义弹出层中的关闭按钮*/
+#Popup6 .close{
+    float: right;
+    cursor: pointer;
+}
+/*定义弹出层中主体内容区域*/
+#Popup6 .main{
+    min-height: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/*定义弹出层的脚部*/
+#Popup6 .footer{
+    height: 40px;
+    border-top: 1px solid #bfbfbf;
+    background-color: #f0f0f0;
+}
+/*定义弹出层的脚部的按钮*/
+#Popup6 .footer input{
+    margin-top: 5px;
+    padding: 5px 10px 4px 10px;
+    font-weight: bold;
+    background-color: #f4f4f4;
+}
+/*定义弹出层的脚部的按钮的hover样式*/
+#Popup6 .footer input:hover{
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+
+
+
+
+/*弹出层*/
+#Popup7{
+    top: 0;
+    left: 0;
+    width: 820px;
+    position: absolute;
+    display: none;
+    border: 1px solid #c3c3c3;
+    background-color: #ffffff;
+    z-index: 101;
+}
+/*定义弹出层里与左右两边的内补白*/
+#Popup7 .top,#Popup7 .main,#Popup7 .footer{
+    padding: 0px 12px 0px 12px;
+}
+/*定义弹出层标题*/
+#Popup7 .top{
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    border-bottom: 1px solid #bfbfbf;
+    background-color: #f0f0f0;
+    cursor: move;
+}
+/*定义弹出层中的关闭按钮*/
+#Popup7 .close{
+    float: right;
+    cursor: pointer;
+}
+/*定义弹出层中主体内容区域*/
+#Popup7 .main{
+    min-height: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/*定义弹出层的脚部*/
+#Popup7 .footer{
+    height: 40px;
+    border-top: 1px solid #bfbfbf;
+    background-color: #f0f0f0;
+}
+/*定义弹出层的脚部的按钮*/
+#Popup7 .footer input{
+    margin-top: 5px;
+    padding: 5px 10px 4px 10px;
+    font-weight: bold;
+    background-color: #f4f4f4;
+}
+/*定义弹出层的脚部的按钮的hover样式*/
+#Popup7 .footer input:hover{
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+
+
+
+/*弹出层*/
+#Popup8{
+    top: 0;
+    left: 0;
+    width: 820px;
+    position: absolute;
+    display: none;
+    border: 1px solid #c3c3c3;
+    background-color: #ffffff;
+    z-index: 101;
+}
+/*定义弹出层里与左右两边的内补白*/
+#Popup8 .top,#Popup8 .main,#Popup8 .footer{
+    padding: 0px 12px 0px 12px;
+}
+/*定义弹出层标题*/
+#Popup8 .top{
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    border-bottom: 1px solid #bfbfbf;
+    background-color: #f0f0f0;
+    cursor: move;
+}
+/*定义弹出层中的关闭按钮*/
+#Popup8 .close{
+    float: right;
+    cursor: pointer;
+}
+/*定义弹出层中主体内容区域*/
+#Popup8 .main{
+    min-height: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/*定义弹出层的脚部*/
+#Popup8 .footer{
+    height: 40px;
+    border-top: 1px solid #bfbfbf;
+    background-color: #f0f0f0;
+}
+/*定义弹出层的脚部的按钮*/
+#Popup8 .footer input{
+    margin-top: 5px;
+    padding: 5px 10px 4px 10px;
+    font-weight: bold;
+    background-color: #f4f4f4;
+}
+/*定义弹出层的脚部的按钮的hover样式*/
+#Popup8 .footer input:hover{
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+
+
+
+
+
+
+/*弹出层*/
+#Popup9{
+    top: 0;
+    left: 0;
+    width: 820px;
+    position: absolute;
+    display: none;
+    border: 1px solid #c3c3c3;
+    background-color: #ffffff;
+    z-index: 101;
+}
+/*定义弹出层里与左右两边的内补白*/
+#Popup9 .top,#Popup9 .main,#Popup9 .footer{
+    padding: 0px 12px 0px 12px;
+}
+/*定义弹出层标题*/
+#Popup9 .top{
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    border-bottom: 1px solid #bfbfbf;
+    background-color: #f0f0f0;
+    cursor: move;
+}
+/*定义弹出层中的关闭按钮*/
+#Popup9 .close{
+    float: right;
+    cursor: pointer;
+}
+/*定义弹出层中主体内容区域*/
+#Popup9 .main{
+    min-height: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/*定义弹出层的脚部*/
+#Popup9 .footer{
+    height: 40px;
+    border-top: 1px solid #bfbfbf;
+    background-color: #f0f0f0;
+}
+/*定义弹出层的脚部的按钮*/
+#Popup9 .footer input{
+    margin-top: 5px;
+    padding: 5px 10px 4px 10px;
+    font-weight: bold;
+    background-color: #f4f4f4;
+}
+/*定义弹出层的脚部的按钮的hover样式*/
+#Popup9 .footer input:hover{
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+
+
+/*弹出层*/
+#Popup10{
+    top: 0;
+    left: 0;
+    width: 820px;
+    position: absolute;
+    display: none;
+    border: 1px solid #c3c3c3;
+    background-color: #ffffff;
+    z-index: 101;
+}
+/*定义弹出层里与左右两边的内补白*/
+#Popup10 .top,#Popup10 .main,#Popup10 .footer{
+    padding: 0px 12px 0px 12px;
+}
+/*定义弹出层标题*/
+#Popup10 .top{
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    border-bottom: 1px solid #bfbfbf;
+    background-color: #f0f0f0;
+    cursor: move;
+}
+/*定义弹出层中的关闭按钮*/
+#Popup10 .close{
+    float: right;
+    cursor: pointer;
+}
+/*定义弹出层中主体内容区域*/
+#Popup10 .main{
+    min-height: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/*定义弹出层的脚部*/
+#Popup10 .footer{
+    height: 40px;
+    border-top: 1px solid #bfbfbf;
+    background-color: #f0f0f0;
+}
+/*定义弹出层的脚部的按钮*/
+#Popup10 .footer input{
+    margin-top: 5px;
+    padding: 5px 10px 4px 10px;
+    font-weight: bold;
+    background-color: #f4f4f4;
+}
+/*定义弹出层的脚部的按钮的hover样式*/
+#Popup10 .footer input:hover{
+    background-color: #ffffff;
+    border-color: #ffffff;
+}

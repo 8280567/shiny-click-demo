@@ -1,0 +1,3 @@
+.menu { BORDER-RIGHT: #006080 2px solid; BORDER-TOP: #80e0ff 2px solid; LEFT: 0px; VISIBILITY: hidden; BORDER-LEFT: #80e0ff 2px solid; BORDER-BOTTOM: #006080 2px solid; POSITION: absolute; TOP: 0px; BACKGROUND-COLOR: #40a0c0 } 
+A.menuItem { BORDER-RIGHT: #000000 0px solid; PADDING-RIGHT: 12px; BORDER-TOP: #000000 0px solid; DISPLAY: block; PADDING-LEFT: 8px; FONT-WEIGHT: bold; FONT-SIZE: 8pt; PADDING-BOTTOM: 2px; BORDER-LEFT: #000000 0px solid; CURSOR: default; COLOR: #ffffff; PADDING-TOP: 2px; BORDER-BOTTOM: #000000 0px solid; FONT-FAMILY: MS Sans Serif, Arial, Tahoma, sans-serif; TEXT-DECORATION: none } 
+A.menuItem:hover { COLOR: #ffff00; BACKGROUND-COLOR: #004060 } 

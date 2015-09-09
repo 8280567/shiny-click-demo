@@ -1,0 +1,8 @@
+name: shiny_click_demo
+account: bone-ace
+server: shinyapps.io
+bundleId: 252191
+url: https://bone-ace.shinyapps.io/shiny_click_demo
+when: 1440571429.92856
+asMultiple: FALSE
+asStatic: FALSE

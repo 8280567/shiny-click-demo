@@ -1,0 +1,17 @@
+{
+    "contents" : "library(hash)\nlibrary(shiny)\nlibrary(ggplot2)\nlibrary(ggthemes)\nsource(\"myMethods.R\", encoding = \"utf-8\")\n\nshinyServer(function(input, output, session) {\noutput$pplot1 <- renderText({  ## click event\n    xy_str <- function(e) {\n        if (is.null(e)) return(\"NULL\\n\")\n        print(paste(\"X:\",sep = \"\",e$x))\n        print(paste(\"Y:\",sep = \"\",e$y))\n\n        bar <- pointAtBar(myPixel,e$x,e$y)\n        if (is.null(bar)) return(\"NULL\\n\")\n        print(bar)\n        session$sendCustomMessage(\"openMenu\",message = list(divid = 'myMenu1',b = 'text',event = e))\n    }\n    xy_range_str <- function(e) {\n        if (is.null(e)) return(\"NULL\\n\")\n        paste0(\"xmin=\", round(e$xmin, 1), \" xmax=\", round(e$xmax, 1),\n               \" ymin=\", round(e$ymin, 1), \" ymax=\", round(e$ymax, 1))\n    }\n    print(xy_str(input$plot_click1))\n    paste0(\"CSDN博客：\")\n})\n\n\noutput$pplot2 <- renderText({  ## click event\n    xy_str <- function(e) {\n        if (is.null(e)) return(\"NULL\\n\")\n        print(paste(\"X:\",sep = \"\",e$x))\n        print(paste(\"Y:\",sep = \"\",e$y))\n\n        bar <- pointAtLine(myPixel,e$x,e$y)\n        if (is.null(bar)) return(\"NULL\\n\")\n        print(bar)\n        session$sendCustomMessage(\"openMenu\",message = list(divid = 'myMenu2',b = 'text',event = e))\n    }\n    xy_range_str <- function(e) {\n        if (is.null(e)) return(\"NULL\\n\")\n        paste0(\"xmin=\", round(e$xmin, 1), \" xmax=\", round(e$xmax, 1),\n               \" ymin=\", round(e$ymin, 1), \" ymax=\", round(e$ymax, 1))\n    }\n    print(xy_str(input$plot_click2))\n    paste0(\"CSDN博客：\")\n})\n\n\noutput$mainBar <- renderImage({\n  dt = data.frame(obj = c('A','D','B','E','C'), val = c(2,15,6,9,7))\n  p = ggplot(dt, aes(x = obj, y = val, fill = obj, group = factor(1))) +   ## Here is your plot\n      geom_bar(stat = \"identity\", width = 0.5) +\n      theme_economist()\n  myPixel <<- Getbar(p)   ## Transforming the centimeter coordinates into pixel coordinates.HASHP is a global variable.\n  ggsave(\"img/mainPlot1.png\", width = 9, height = 4.6, dpi = 300)   ## Save your ggplot2 plot as a picture.\n\n  filename <- normalizePath(file.path('./img', paste('mainPlot1', '.png', sep = '')))\n  list(src = filename\n       ,width = 800\n       , height = 400\n  )\n}, deleteFile = FALSE)\n\n\noutput$mainLine <- renderImage({\n    dt = data.frame(A = 1:10, B = c(2,15,6,18,9,7,13,15,10,3), C = c('A','C','A','B','C','D','A','C','D','B'))\n    p = ggplot(dt, aes(x = A, y = B, color = C, group = factor(1))) +\n        geom_point(size = 0.8) +\n        geom_line(size = 0.8) +\n        geom_text(aes(label = B, vjust = 1.1, hjust = -0.5, angle = 45), show_guide = FALSE)   ## 添加点的数值\n    myPixel <<- GetLine(p)\n    ggsave(\"img/mainPlot2.png\", width = 9, height = 4.6, dpi = 300)   ## Save your ggplot2 plot as a picture.\n\n    filename <- normalizePath(file.path('./img', paste('mainPlot2', '.png', sep = '')))\n    list(src = filename\n         ,width = 800\n         , height = 400\n    )\n}, deleteFile = FALSE)\n\n})\n\n",
+    "created" : 1440379324830.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2239963338",
+    "id" : "E41BD5AA",
+    "lastKnownWriteTime" : 1440385423,
+    "path" : "C:/Users/Administrator/Desktop/shiny_click_demo/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
