@@ -10,7 +10,7 @@ You can see the effect in Shinyapps: https://bone-ace.shinyapps.io/shiny_click_d
 <br>
 You can run the code in your own RStudio.And here is the effect that run with Firefox browser：
 ![](http://img.blog.csdn.net/20150909213505981)
-![](http://img.blog.csdn.net/20150909213505981)
+![](http://img.blog.csdn.net/20150909213518697)
 
 <br>
 <br>
